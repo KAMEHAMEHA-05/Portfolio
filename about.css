@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.title-container-about {
+    position: fixed; /* Change to fixed */
+    width: 100%;
+    height: auto; /* Change to auto */
+    align-items: flex-start;
+    justify-content: flex-start;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.title-container-about pre {
+    font-family: monospace;
+    /* color: rgba(41, 167, 240, 0.901); */
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    color: transparent; /* Make the text color transparent */
+    background: linear-gradient(to top, rgba(2, 70, 109, 0.901), rgba(20, 143, 214, 0.901)); /* Gradient from black to white */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Required for Firefox */
+}
+
+.main-text {
+    justify-content: space-between;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    position: relative;
+    font-size: 18px;
+    margin-top: 100px;
+    z-index: 2;
+}
+
+.main-text .intro {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    position: relative;
+    font-size: 18px;
+    margin-top: 50px;
+    z-index: 2;
+    text-align: left;
+    max-width: 50%;
+    width: auto; /* Allows width to be determined by content up to max-width */
+    flex-grow: 0; /* Prevents flex child from growing */
+    flex-shrink: 1; /* Allows child to shrink if needed */
+}
+
+.main-text .profile-img {
+    width: 50%;  /* Gives space for the image */
+    display: flex
+}
+
+.main-text .profile-img img {
+    max-width: 100%;  /* Makes sure the image doesn't overflow */
+    height: auto;  /* Maintains aspect ratio */
+}
