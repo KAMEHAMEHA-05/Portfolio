@@ -6,17 +6,15 @@ body {
     background-image: 
         linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
-    overflow: hidden;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 40px;
     box-sizing: border-box;
     background-color: black;
 }
 
 .title-container-about {
-    position: fixed; /* Change to fixed */
+    position: relative; /* Change to fixed */
     width: 100%;
     height: auto; /* Change to auto */
     align-items: flex-start;
@@ -26,7 +24,6 @@ body {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    margin-bottom: 20px;
 }
 .title-container-about pre {
     font-family: monospace;
@@ -43,14 +40,18 @@ body {
 }
 
 .main-text {
+    display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     position: relative;
     font-size: 18px;
-    margin-top: 100px;
+    margin-top: 50px;
     z-index: 2;
+    width: 100%;
+    margin-bottom: 50px;  /* Add space between this and experience section */
 }
 
 .main-text .intro {
@@ -59,21 +60,88 @@ body {
     font-weight: 200;
     position: relative;
     font-size: 18px;
-    margin-top: 50px;
     z-index: 2;
     text-align: left;
-    max-width: 50%;
-    width: auto; /* Allows width to be determined by content up to max-width */
-    flex-grow: 0; /* Prevents flex child from growing */
-    flex-shrink: 1; /* Allows child to shrink if needed */
+    width: 60%;  /* Change from max-width to width */
+    flex-shrink: 0;  /* Prevent shrinking */
 }
 
 .main-text .profile-img {
-    width: 50%;  /* Gives space for the image */
-    display: flex
+    width: 50%;
+    display: flex;
+    justify-content: center;  /* Center the image horizontally */
+    align-items: center;  /* Center the image vertically */
+    margin-top: 50px;  /* Match the intro's margin-top */
 }
 
 .main-text .profile-img img {
     max-width: 100%;  /* Makes sure the image doesn't overflow */
     height: auto;  /* Maintains aspect ratio */
+}
+
+.experience {
+    width: 75%;
+    margin-top: 10px;  /* Space from main-text section */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+
+.experience .ex-title {
+    font-weight: 800;
+    font-size: 45px;
+    margin-bottom: 30px;  /* Space between title and job */
+    color: rgb(198, 193, 193);
+}
+
+.experience .ex-title p {
+    margin: 0;
+}
+
+.experience .job .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience .job .title .name {
+    font-size: 24px;
+    text-align: left;
+}
+
+.experience .job .title .date {
+    align-items: end;
+    font-size: 19px;
+    color: rgb(168, 166, 166);
+}
+
+.experience .job .company {
+    font-size: 19px;
+    padding-bottom: 1%;
+    color: rgb(168, 166, 166);
+}
+.experience .job .description {
+    padding-left: 2%;
+    font-size: 16px;
+}
+
+.experience .job .description .important-words{
+    font-size: 16px;
+    color: rgb(3, 200, 200);
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+hr {
+    background-color: rgb(141, 140, 140);
+    border: none;
+    height: 1px;
 }
