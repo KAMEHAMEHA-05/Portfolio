@@ -4,25 +4,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ishaan Sawant</title>
         <style>
-            iframe{
-                width: 100%;
-                border: 0;
-                border-color: transparent;
-                margin-bottom: 50px;
-                padding: 0;         /* Removes any padding */
-                display: block;     /* Prevents inline spacing issues */
-                overflow: hidden; 
-            }
-            body{
+            html, body {
+                margin: 0;
+                padding: 0;
                 background-color: black;
+                width: 100%;
+                overflow-x: hidden;
+            }
+            
+            iframe {
+                width: 100%;
+                min-height: 100vh;  /* This makes each iframe at least full viewport height */
+                border: 0;
+                margin: 0;
+                padding: 0;
+                display: block;
             }
         </style>
     </head>
 
     <body>
-        <iframe src="page.html" height="700" frameborder="0"></iframe>
-        <iframe src="about.html" height=100%></iframe>
-        <iframe src="projects.html" height="700"></iframe>
-        <iframe src="skills.html" height="700"></iframe>
+        <iframe src="page.html" scrolling="no"></iframe>
+        <iframe src="about.html" scrolling="no"></iframe>
+        <iframe src="projects.html" scrolling="no"></iframe>
+        <iframe src="skills.html" scrolling="no"></iframe>
     </body>
 </html>

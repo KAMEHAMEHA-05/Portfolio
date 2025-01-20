@@ -1,5 +1,6 @@
 body {
-    margin: 0;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 0;
     height: 100vh;
     background-size: 40px 40px;
@@ -11,6 +12,7 @@ body {
     align-items: flex-start;
     box-sizing: border-box;
     background-color: black;
+    overflow-y: auto;
 }
 
 .title-container-about {
@@ -66,8 +68,12 @@ body {
     flex-shrink: 0;  /* Prevent shrinking */
 }
 
+.main-text .intro .location {
+    color: rgb(3, 200, 200);
+}
+
 .main-text .profile-img {
-    width: 50%;
+    width: 35%;
     display: flex;
     justify-content: center;  /* Center the image horizontally */
     align-items: center;  /* Center the image vertically */
@@ -80,11 +86,12 @@ body {
 }
 
 .experience {
-    width: 75%;
+    width: 100%;
     margin-top: 10px;  /* Space from main-text section */
     color: white;
     font-family: 'Montserrat', sans-serif;
     text-align: left;
+    padding-bottom: 50px;  /* Space between this and the next section */
 }
 
 .experience .ex-title {
@@ -106,7 +113,15 @@ body {
 
 .experience .job .title .name {
     font-size: 24px;
-    text-align: left;
+}
+
+.experience .job .title .title-left .degree {
+    font-size: 24px;
+    color: rgb(3, 200, 200);
+}
+
+.experience .job .title .title-left .branch {
+    font-size: 24px;
 }
 
 .experience .job .title .date {
@@ -134,7 +149,6 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    overflow-y: auto;
     padding: 40px;
     box-sizing: border-box;
     position: relative;
