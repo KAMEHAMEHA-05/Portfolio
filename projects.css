@@ -21,8 +21,9 @@ body {
     font-size: 12px;
     margin: 0;
     line-height: 1.2;
+    padding-top: 4%;
     color: transparent;
-    background: linear-gradient(to top, rgba(213, 81, 4, 0.901), rgba(209, 157, 2, 0.901));
+    background: linear-gradient(to top, rgba(213, 81, 4, 0.901), rgba(227, 227, 5, 0.901));
     -webkit-background-clip: text;
     background-clip: text;
     text-align: center;
@@ -87,6 +88,70 @@ body {
     color: #f9f7f7;
     font-size: 15px;
     line-height: 1.5;
+}
+
+.navbar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 60px; /* Reduced from 100% to fixed height */
+    width: auto; /* Changed from fixed width to auto */
+    background-color: #00000000;
+    display: flex;
+    flex-direction: row; /* Changed from column to row */
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.nav-links a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
+    display: inline-block; /* Changed from block */
+    text-align: center;
+    width: auto; /* Changed from 100% */
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgb(6, 190, 190);
+    text-shadow: rgba(6, 190, 190, 0.601) 0px 0px 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: fixed; /* Add this */
+    left: 20px; /* Add this */
+    top: 4%; /* Add this */
+    transform: translateY(-50%); /* Add this */
+    margin-left: 0; /* Remove the auto margin */
+    padding-left: 0; /* Remove the padding */
+}
+
+
+.social-links a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    color: #e97006;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-right: 20px; /* Add padding only to the right side */
 }
 
 body::-webkit-scrollbar {
