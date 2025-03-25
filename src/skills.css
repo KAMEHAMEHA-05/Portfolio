@@ -37,7 +37,7 @@ body {
     position: relative;
     z-index: 1;
     color: transparent; /* Make the text color transparent */
-    background: linear-gradient(to top, rgba(2, 70, 109, 0.901), rgba(20, 143, 214, 0.901)); /* Gradient from black to white */
+    background: linear-gradient(to top, rgba(2, 74, 61, 0.901), rgba(2, 186, 146, 0.901)); /* Gradient from black to white */
     -webkit-background-clip: text; /* Clip the background to the text */
     background-clip: text; /* Required for Firefox */
 }
@@ -86,7 +86,7 @@ body {
     height: auto;  /* Maintains aspect ratio */
 }
 
-.experience {
+.domain {
     width: 100%;
     margin-top: 10px;  /* Space from main-text section */
     color: white;
@@ -95,56 +95,15 @@ body {
     padding-bottom: 50px;  /* Space between this and the next section */
 }
 
-.experience .ex-title {
+.domain .dm-title {
     font-weight: 800;
     font-size: 45px;
     margin-bottom: 30px;  /* Space between title and job */
     color: rgb(198, 193, 193);
 }
 
-.experience .ex-title p {
+.domain .dm-title p {
     margin: 0;
-}
-
-.experience .job .title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.experience .job .title .name {
-    font-size: 24px;
-}
-
-.experience .job .title .title-left .degree {
-    font-size: 24px;
-    color: rgb(3, 200, 200);
-}
-
-.experience .job .title .title-left .branch {
-    font-size: 24px;
-}
-
-.experience .job .title .date {
-    align-items: end;
-    font-size: 19px;
-    color: rgb(168, 166, 166);
-}
-
-.experience .job .company {
-    font-size: 19px;
-    padding-bottom: 1%;
-    color: rgb(168, 166, 166);
-}
-.experience .job .description {
-    padding-left: 2%;
-    font-size: 16px;
-}
-
-.experience .job .description .important-words{
-    font-size: 16px;
-    color: rgb(3, 200, 200);
-    text-decoration: none;
 }
 
 .container {
@@ -219,12 +178,6 @@ body {
     padding-right: 20px; /* Add padding only to the right side */
 }
 
-hr {
-    background-color: rgb(141, 140, 140);
-    border: none;
-    height: 1px;
-}
-
 body::-webkit-scrollbar {
     width: 8px;
 }
@@ -238,86 +191,89 @@ body::-webkit-scrollbar-thumb {
     border-radius: 4px;
 }
 
-.profile-model-container {
-    width: 100%;
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tech-card {
+    width: 250px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--fade-color, rgba(255,255,255,0.1));
+    transition: border-color 0.3s ease;
+}
+
+.tech-card:hover {
+    border-color: color-mix(in srgb, var(--fade-color, rgba(255,255,255,0.1)) 70%, white);
+}
+
+.tech-logo {
+    width: 80px;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
-#model-canvas {
+.tech-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.tech-name {
+    flex-grow: 1;
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    color: white;
+    padding-right: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.tech-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 100%;
-    height: 500px;
-    cursor: pointer;
-    background: transparent;
-}
-.metric-container {
-    display: flex;
-    gap: 5px;
-    width: 500px;
-    height: 80px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(to left, 
+        var(--fade-color, rgba(255,255,255,0.1)), 
+        transparent 70%
+    );
+    opacity: 0.5;
+    z-index: 1;
 }
 
-.metric-section {
-    font-family: 'Montserrat', sans-serif;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.metric-secti:hover {
-    font-family: 'Montserrat', sans-serif;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Shine Effect */
+.shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg, 
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent
+    );
+    transform: skewX(-45deg) translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
-.metric-section:nth-child(1) {
-    background-image: url('public/about/bluegrad.png');
-}
-
-.metric-section:nth-child(2) {
-    background-image: url('public/about/orange.png');
-}
-
-.metric-section:nth-child(3) {
-    background-image: url('public/about/teal.png');
-}
-
-.metric-section:nth-child(4) {
-    background-image: url('public/about/violet.png');
-}
-
-.label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-
-.value {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
+.tech-card:hover .shine {
+    transform: skewX(-45deg) translateX(250%);
 }
