@@ -5,7 +5,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <title>Ishaan Sawant</title>
     </head>
+    <style>
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
     <body>
+        <canvas id="particles-canvas"></canvas>
         <nav class="navbar">
             <div class="social-links">
                 <a href="https://github.com/KAMEHAMEHA-05"_blank" aria-label="GitHub">
@@ -43,13 +54,15 @@
         
         <main class="content-wrapper">
             <div class="card-container">
-                <div class="card">
-                <img src="/project-img.jpg" alt="Card image">
-                <div class="card-content">
-                    <h3 class="card-title">Synapse Engine</h3>
-                    <p class="card-description">Julia based Machine Learning framework for explanding avenues in meta learning.</p>
-                </div>
-                </div>
+                <a href="https://github.com/KAMEHAMEHA-05/SynapseEngine" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="card">
+                    <img src="/project-img.jpg" alt="Card image">
+                    <div class="card-content">
+                        <h3 class="card-title">Synapse Engine</h3>
+                        <p class="card-description">Julia based Machine Learning framework for explanding avenues in meta learning.</p>
+                    </div>
+                    </div>
+                </a>
 
                 <div class="card">
                     <img src="/project-img-nocturne.jpg" alt="Card image">
@@ -75,13 +88,15 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <img src="/project-img-skybeat.jpg  " alt="Card image">
-                    <div class="card-content">
-                    <h3 class="card-title">Sky Beat</h3>
-                    <p class="card-description">Understands emotions through facial expressions and speech to play music that suits your mood.</p>
+                <a href="https://github.com/KAMEHAMEHA-05/Sky-Beat" style="text-decoration: none; color: inherit; display: block;">
+                    <div class="card">
+                        <img src="/project-img-skybeat.jpg  " alt="Card image">
+                        <div class="card-content">
+                        <h3 class="card-title">Sky Beat</h3>
+                        <p class="card-description">Understands emotions through facial expressions and speech to play music that suits your mood.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <div class="card">
                     <img src="/project-img-notemaker.jpg" alt="Card image">
@@ -93,4 +108,84 @@
             </div>
         </>
     </body>
+    <script>
+        // Particles script
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+    
+            // Set canvas to full window size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+    
+            const particles = [];
+            const particleCount = 100;
+    
+            // Set a constant speed for all particles
+            const speed = 1; // Adjust this value to control the speed
+    
+            class Particle {
+                constructor(x, y, size, direction) {
+                    this.x = Math.floor(x);
+                    this.y = Math.floor(y);
+                    this.size = size;
+    
+                    // Use the same speed but vary the direction
+                    this.speedX = Math.cos(direction) * speed*0.5;
+                    this.speedY = Math.sin(direction) * speed*0.5;
+                }
+    
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+    
+                    // Bounce at edges
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                }
+    
+                draw() {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.fillRect(Math.round(this.x), Math.round(this.y), this.size, this.size);
+                }
+            }
+    
+            // Create particles
+            function createParticles() {
+                for (let i = 0; i < particleCount; i++) {
+                    const x = Math.random() * canvas.width;
+                    const y = Math.random() * canvas.height;
+                    const size = Math.floor(Math.random() * 4) + 2;
+    
+                    // Random direction in radians (0 to 2π)
+                    const direction = Math.random() * Math.PI * 2;
+    
+                    particles.push(new Particle(x, y, size, direction));
+                }
+            }
+    
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+    
+                requestAnimationFrame(animate);
+            }
+    
+            // Handle window resizing
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+    
+            // Initialize
+            createParticles();
+            animate();
+        });
+    </script>
+    
 </html>
