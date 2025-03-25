@@ -217,7 +217,7 @@
                 const textureLoader = new THREE.TextureLoader();
 
                 loader.load(
-                    '/public/homebg/tenhun_falling_spaceman_fanart/scene.gltf',
+                    '/assets/homebg/tenhun_falling_spaceman_fanart/scene.gltf',
                     (gltf) => {
                         const model = gltf.scene;
                         
@@ -385,7 +385,7 @@
                     const elapsedTime = currentTime - startTime;
                     const progress = Math.min(elapsedTime / duration, 1);
 
-                    
+
                     currentValue = Math.floor(progress * targetValue);
                     valueElement.textContent = currentValue;
 
