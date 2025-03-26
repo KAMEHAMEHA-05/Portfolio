@@ -5,10 +5,11 @@ body {
     padding: 0;
     height: 100vh;
     position: relative; /* Add relative positioning */
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 40px;
     box-sizing: border-box;
     background-color: black;
@@ -28,11 +29,11 @@ body {
 /* Modify the existing background grid */
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-size: 40px 40px;
     background-image: 
         linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
@@ -108,6 +109,7 @@ body::before {
 .content-container {
     text-align: left;
     margin-bottom: 20px;
+    margin-top: 17%;
     position: relative;
     display: flex;           /* Added this */
     flex-direction: column;  /* Added this */
@@ -256,3 +258,143 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba(0, 128, 128, 0.5);
     border-radius: 4px;
 }
+
+.bento-container, .bento-1, .bento-2, .bento-3, .bento-2-b, .bento-2-a, .bento-2-a-y, .bento-2-a-y-q{
+    display: flex;
+    gap: 1%;
+}
+
+.bento-1, .bento-2, .bento-3, .bento-2-a-y {
+    flex-direction: column;
+}
+
+.bento-2-a, .bento-2-a-y-q, .bento-2-b {
+    flex-direction: row;
+} 
+
+.bento-1-a, .bento-1-b, .bento-2-b-x, .bento-2-b-y, .bento-2-a-x, .bento-2-a-y-p, .bento-2-a-y-q-m, .bento-2-a-y-q-n, .bento-3-a, .bento-3-b {
+    border: 1px solid rgba(255, 255, 255, 0.315);
+    border-radius: 20px;
+}
+
+.bento-container {
+    min-width: 80vw;
+    min-height: 80vh;
+    max-width: 80vw;
+    max-height: 80vh;
+    margin-left: 7%;
+}
+
+.bento-1 {
+    width: 20%;
+    height: 100%;
+}
+.bento-2 {
+    width: 50%;
+    height: 100%;
+}
+.bento-3 {
+    width: 28%;
+    height: 100%;
+}
+
+.bento-1-a {
+    width: 100%;
+    height: 49%;
+}
+.bento-1-b {
+    width: 100%;
+    height: 50%;
+    background: 
+        url('assets/bento/glitchlg.png') center / cover no-repeat
+        rgba(5, 204, 158, 0.29);
+}
+.bento-2-a {
+    height: 80%;
+    width: 100%;
+}
+.bento-2-b {
+    height: 19%;
+    width: 100%;
+}
+.bento-2-a-x {
+    width: 50%;
+    height: 100%;
+    background: 
+        url('assets/bento/bytopia.png') center / cover no-repeat,
+        url('assets/bento/glitchlg.png') center / cover no-repeat,
+        rgba(8, 203, 242, 0.29);
+}
+.bento-2-a-y {
+    width: 49%;
+    height: 100%;
+}
+.bento-2-a-y-p {
+    width: 100%;
+    height: 49%;
+    background:
+        url('assets/bento/glitchlgwt.png') center / cover no-repeat 
+        rgba(147, 3, 224, 0.29);
+}
+.bento-2-a-y-q {
+    width: 100%;
+    height: 50%;
+}
+.bento-2-a-y-q-m {
+    width: 49%;
+    height: 100%;
+    background: 
+        url('assets/bento/glitchlgwt.png') center / cover no-repeat
+        rgba(224, 132, 3, 0.29);
+}
+.bento-2-a-y-q-n {
+    width: 50%;
+    height: 100%;
+    background: 
+        url('assets/bento/glitchlg.png') center / cover no-repeat
+        rgba(3, 224, 191, 0.29);
+}
+.bento-2-b-x {
+    width: 65%;
+    height: 100%;
+    background: 
+        url('assets/bento/glitchlgwt.png') center / cover no-repeat
+        rgba(63, 2, 185, 0.29);
+}
+.bento-2-b-y {
+    width: 34%;
+    height: 100%;
+    background: 
+        url('assets/bento/glitchlgwt.png') center / cover no-repeat
+        rgba(188, 7, 128, 0.29);
+}
+
+.bento-3-a {
+    width: 100%;
+    height: 70%;
+    background: 
+        url('assets/bento/glitchlg.png') center / cover no-repeat
+        rgba(224, 220, 3, 0.29);
+}
+.bento-3-b {
+    width: 100%;
+    height: 29%;
+    background: 
+        url('assets/bento/glitchlgwt.png') center / cover no-repeat
+        rgba(3, 139, 224, 0.29);
+}
+
+.bento-content {
+    margin-top: 10%; 
+    margin-left: 10%;
+}
+
+.bento-title-proj {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    text-shadow: 4px 4px 8px rgba(245, 161, 6, 0.721);
+}
+
+

@@ -69,6 +69,13 @@ body {
     flex-shrink: 0;  /* Prevent shrinking */
 }
 
+/* .main-text .intro .intro-text {
+    border: 1px solid rgba(255, 255, 255, 0.788);
+    padding-left: 10px;
+    padding-right: 5px;
+    border-radius: 20px;
+} */
+
 .main-text .intro .location {
     color: rgb(3, 200, 200);
 }
