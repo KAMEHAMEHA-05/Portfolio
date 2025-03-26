@@ -272,7 +272,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: row;
 } 
 
-.bento-1-a, .bento-1-b, .bento-2-b-x, .bento-2-b-y, .bento-2-a-x, .bento-2-a-y-p, .bento-2-a-y-q-m, .bento-2-a-y-q-n, .bento-3-a, .bento-3-b {
+.bento-1-b, .bento-2-b-x, .bento-2-b-y, .bento-2-a-x, .bento-2-a-y-p, .bento-2-a-y-q-m, .bento-2-a-y-q-n, .bento-3-a, .bento-3-b {
     border: 1px solid rgba(255, 255, 255, 0.315);
     border-radius: 20px;
 }
