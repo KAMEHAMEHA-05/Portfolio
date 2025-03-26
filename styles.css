@@ -321,8 +321,8 @@ body::-webkit-scrollbar-thumb {
     width: 50%;
     height: 100%;
     background: 
-        url('assets/bento/bytopia.png') center / cover no-repeat,
-        url('assets/bento/glitchlg.png') center / cover no-repeat,
+        url('assets/bento/bytopia22.png') center / cover no-repeat,
+        /* url('assets/bento/glitchlg.png') center / cover no-repeat, */
         rgba(8, 203, 242, 0.29);
 }
 .bento-2-a-y {
@@ -333,7 +333,8 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 49%;
     background:
-        url('assets/bento/glitchlgwt.png') center / cover no-repeat 
+        url('assets/bento/rocket4.png') center no-repeat, 
+        /* url('assets/bento/glitchlgwt.png') center / cover no-repeat,  */
         rgba(147, 3, 224, 0.29);
 }
 .bento-2-a-y-q {
@@ -373,19 +374,31 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     height: 70%;
     background: 
-        url('assets/bento/glitchlg.png') center / cover no-repeat
+        url('assets/bento/astro.png') center / cover no-repeat,
+        /* url('assets/bento/glitchlg.png') center / cover no-repeat */
         rgba(224, 220, 3, 0.29);
 }
 .bento-3-b {
     width: 100%;
     height: 29%;
     background: 
-        url('assets/bento/glitchlgwt.png') center / cover no-repeat
+        /* url('assets/bento/clouds.png') center no-repeat, */
+        url('assets/bento/stars2.png') center no-repeat,
+        /* url('assets/bento/glitchlgwt.png') center / cover no-repeat */
         rgba(3, 139, 224, 0.29);
 }
 
 .bento-content {
     margin-top: 10%; 
+    margin-left: 10%;
+}
+.bento-content-posts {
+    margin-top: 3%; 
+    margin-left: 10%;
+}
+
+.bento-content-skills {
+    margin-top: 3%; 
     margin-left: 10%;
 }
 
@@ -395,6 +408,30 @@ body::-webkit-scrollbar-thumb {
     font-size: 30px;
     text-decoration: none;
     text-shadow: 4px 4px 8px rgba(245, 161, 6, 0.721);
+}
+
+.bento-title-posts {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-shadow: 4px 4px 8px rgb(0, 255, 115);
+}
+
+.bento-title-blogs {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    text-shadow: 4px 4px 8px rgb(0, 195, 255);
+}
+
+.bento-title-about {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    text-shadow: 4px 4px 8px rgba(6, 213, 245, 0.721);
 }
 
 
