@@ -383,8 +383,8 @@ body::-webkit-scrollbar-thumb {
     height: 29%;
     background: 
         /* url('assets/bento/clouds.png') center no-repeat, */
-        url('assets/bento/stars2.png') center no-repeat,
-        /* url('assets/bento/glitchlgwt.png') center / cover no-repeat */
+        url('assets/bento/clouds3.png') center no-repeat,
+        url('assets/bento/glitchlgwt.png') center / cover no-repeat
         rgba(3, 139, 224, 0.29);
 }
 
@@ -398,8 +398,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 .bento-content-skills {
-    margin-top: 3%; 
+    margin-top: 5%; 
     margin-left: 10%;
+}
+
+.bento-content-vibe {
+    margin-top: 4%; 
+    margin-left: 5%;
 }
 
 .bento-title-proj {
@@ -433,5 +438,7 @@ body::-webkit-scrollbar-thumb {
     text-decoration: none;
     text-shadow: 4px 4px 8px rgba(6, 213, 245, 0.721);
 }
+
+
 
 
