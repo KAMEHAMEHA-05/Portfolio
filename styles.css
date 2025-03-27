@@ -387,7 +387,7 @@ body::-webkit-scrollbar-thumb {
     height: 29%;
     background: 
         /* url('assets/bento/clouds.png') center no-repeat, */
-        url('assets/bento/clouds3.png') center no-repeat,
+        url('assets/bento/clouds4.png') center no-repeat,
         url('assets/bento/glitchlgwt.png') center / cover no-repeat
         rgba(3, 139, 224, 0.29);
 }
@@ -395,6 +395,11 @@ body::-webkit-scrollbar-thumb {
 .bento-content {
     margin-top: 10%; 
     margin-left: 10%;
+}
+.bento-content-desc {
+    margin-top: 10%; 
+    margin-left: 10%;
+    margin-right: 10%
 }
 .bento-content-posts {
     margin-top: 3%; 
@@ -460,6 +465,34 @@ body::-webkit-scrollbar-thumb {
     text-shadow: 4px 4px 8px rgba(6, 213, 245, 0.721);
 }
 
+.resume-button {
+    width: 50%; 
+    height: 5vh; 
+    border: 1px solid rgba(255, 255, 255, 0.700); 
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: rgba(255, 255, 255, 0.700);
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 17px; 
+    font-weight: 500; 
+    color: rgba(19, 19, 19, 0.977); 
+    text-align: center;
+    text-decoration: none;
+}
+
+.resume-button:hover {
+    width: 50%; 
+    height: 5vh; 
+    border: 1px solid white; 
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: rgba(247, 161, 3, 0.742);
+    color: white;
+}
 
 
 
