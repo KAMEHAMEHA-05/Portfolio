@@ -1,32 +1,307 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ishaan Sawant</title>
-        <style>
-            html, body {
-                margin: 0;
-                padding: 0;
-                background-color: black;
-                width: 100%;
-                overflow-x: hidden;
-            }
-            
-            iframe {
-                width: 100%;
-                min-height: 100vh;  /* This makes each iframe at least full viewport height */
-                border: 0;
-                margin: 0;
-                padding: 0;
-                display: block;
-            }
-        </style>
-    </head>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Ishaan Sawant</title>
+    <link rel="icon" href="profile-img.png" type="image/x-icon">
+</head>
+<style>
+    #particles-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+<body>
+    <svg id="background-svg" xmlns="http://www.w3.org/2000/svg">
+        <!-- Your existing SVG content here -->
+        <!-- <image href="/assets/homebg/galaxypix2.png" x="5%" y="5%" width="90%" height="90%" transform="rotate(0)"/> -->
+        
+        <image href="/assets/homebg/spaceshippix.png" x="15%" y="110%" width="95%" height="95%" transform="rotate(-30)"/>
+        <image href="/assets/homebg/leo.png" x="10%" y="80%" width="40%" height="40%" transform="rotate(-30)"/>
+        <image href="/assets/homebg/scorpio.png" x="30%" y="135%" width="20%" height="20%" transform="rotate(-30)"/>
+        <image href="/assets/homebg/saggitar.png" x="5%" y="110%" width="20%" height="20%" transform="rotate(-30)"/>
+        <image href="/assets/homebg/ursa.png" x="45%" y="80%" width="20%" height="20%" transform="rotate(-30)"/>
+    
+        <image href="/assets/homebg/orion.png" x="0%" y="30%" width="30%" height="30%" transform="rotate(-30)"/>
+    </svg>
+    <canvas id="particles-canvas"></canvas>
+    <nav class="navbar">
+        <div class="social-links">
+            <a href="https://github.com/KAMEHAMEHA-05" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ishaan-sawant" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://discordapp.com/users/806511180226363394" target="_blank" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://x.com/KAMEHAMEHA_05" target="_blank" aria-label="X">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="/" style="text-shadow: 4px 4px 8px rgba(3, 166, 112, 0.57);">HOME</a>
+            <a href="/about.html">ABOUT</a>
+            <a href="/projects.html">PROJECTS</a>
+            <a href="/skills.html">SKILLS</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#more">MORE</a>
+        </div>
+    </nav>
+    <div class="content-container">
+        <div class="pixel-text-1">Hello, I'm</div>
+        <pre>
+██╗███████╗██╗  ██╗ █████╗  █████╗ ███╗   ██╗
+██║██╔════╝██║░░██║██╔══██╗██╔══██╗████╗░░██║░
+██║███████╗███████║███████║███████║██╔██╗░██║░
+██║╚════██║██╔══██║██╔══██║██╔══██║██║╚██╗██║░
+██║███████║██║░░██║██║░░██║██║░░██║██║░╚████║░
+╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 
-    <body>
-        <iframe src="page.html"></iframe>
-        <iframe src="about.html"></iframe>
-        <iframe src="projects.html"></iframe>
-        <iframe src="skills.html"></iframe>
-    </body>
+███████╗ █████╗ ██╗    ██╗ █████╗ ███╗   ██╗████████╗
+██╔════╝██╔══██╗██║ ░░ ██║██╔══██╗████╗░░██║╚══██╔══╝
+███████╗███████║██║░█╗░██║███████║██╔██╗░██║░░░██║░░░
+╚════██║██╔══██║██║███╗██║██╔══██║██║╚██╗██║░░░██║░░  
+███████║██║░░██║╚███╔███╔╝██║░░██║██║░╚████║░░░██║░░    
+╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   </pre>
+        <div class="pixel-text-2">AI Researcher | SIH 2023 Finalist</div>
+        <a href="https://www.linkedin.com/in/ishaan-sawant" class="connect-button">
+            <span class="left-text">CON</span>
+            <span class="right-text">NECT</span>
+        </a>
+    </div>
+    <br><br><br><br><br>
+    <div class="bento-container">
+        <div class="bento-1">
+            <div class="bento-1-a">
+                <img src="profile-img.png" alt="Profile Image" width="100%" height="100%">
+            </div>
+            <div class="bento-1-b">
+                <div class="bento-content-desc">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 500; color: rgb(252, 252, 253)">
+                        <p>AI researcher with a knack for building clever systems, crafting sleek websites, and occasionally 
+                            making code do backflips. <br>Off-duty? You'll find me lost in music, buried 
+                            in a book, or chasing pixels in a video game.</p>
+                    </span>
+                    <a href="/assets/bento/Resume_Ishaan_Sawant.pdf" style="text-decoration: none;">
+                        <div class="resume-button">
+                            Resume
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>            
+        </div>
+        <div class="bento-2">
+            <div class="bento-2-a">
+                <div class="bento-2-a-x">
+                    <div class="bento-content">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; color: rgb(252, 252, 253); text-shadow: 4px 4px 8px rgba(145, 6, 245, 0.57);">
+                            Welcome to Bytopia!
+                        </span>                        
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 500; color: rgb(252, 252, 253)"><p>Check out some of the cool stuff I've built...</p></span>
+                        <br><br><br><br><br><br>
+                        <a class="bento-title-proj" href="/projects.html">Projects</a>
+                    </div>
+                </div>
+                <div class="bento-2-a-y">
+                    <div class="bento-2-a-y-p">
+                        <div class="bento-content-posts">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; color: rgb(252, 252, 253); text-shadow: 4px 4px 8px rgba(237, 245, 6, 0.57);">
+                                My Perspective
+                            </span>                        
+                            <br><br><br>
+                            <div style="display: flex; gap: 50px;">
+                                <a class="bento-title-blogs" style="text-shadow: rgb(0, 195, 255);" href="/projects.html">Blogs</a>
+                                <a class="bento-title-posts" style="text-shadow: rgb(0, 255, 115);" href="/projects.html">Posts</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-2-a-y-q">
+                        <div class="bento-2-a-y-q-m">
+                            <div class="bento-content-contact">
+                                <span style="font-family: 'Vast Shadow', serif; font-size: 27px; text-align: center; font-weight: 400; color: rgb(252, 252, 253); text-shadow: 4px 4px 8px rgba(237, 245, 6, 0.57);">
+                                    Play<br>Ground
+                                </span> 
+                                <br>
+                                <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 500; color: rgba(252, 252, 253, 0.747); text-align: center;"><p>Coming Soon...</p></span>
+                        
+                            </div>
+                        </div>
+                        <div class="bento-2-a-y-q-n">
+                            <div class="bento-content-contact">
+                                <a class="bento-title-contact" style="text-shadow: rgb(0, 195, 255);" href="/projects.html">Get</a>
+                                <br>
+                                <a class="bento-title-contact" style="text-shadow: rgb(0, 195, 255);" href="/projects.html">In</a>
+                                <br>
+                                <a class="bento-title-contact" style="text-shadow: rgb(0, 195, 255);" href="/projects.html">Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bento-2-b">
+                <div class="bento-2-b-x">
+                    <div class="bento-content-vibe">
+                        <div style="display: flex; gap: 40px">
+                            <span style="font-family: 'Montserrat', sans-serif; font-size: 35px; font-weight: 800; color: rgb(252, 252, 253); text-shadow: 4px 4px 8px rgba(237, 245, 6, 0.57); margin-top: 4%;">
+                                Vibe with me
+                            </span>
+                            <div class="fab-grid" style="display: flex; gap: 15px;">
+                                <div>
+                                    <a href="https://open.spotify.com/user/koh7tcgwtzuylwe2kkcb354ts" target="_blank" aria-label="Spotify">
+                                        <i class="fab fa-spotify" style="font-size: 32px; padding-bottom: 15px; color: rgba(250, 245, 245, 0.715);"></i>
+                                    </a>
+                                    <br>
+                                    <a href="https://steamcommunity.com/profiles/76561199212872067/" target="_blank" aria-label="Steam">
+                                        <i class="fab fa-steam" style="font-size: 32px; padding-bottom: 10px; color: rgba(250, 245, 245, 0.715);"></i>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="https://discordapp.com/users/806511180226363394" target="_blank" aria-label="Discord">
+                                        <i class="fab fa-discord" style="font-size: 32px; padding-bottom: 15px; color: rgba(250, 245, 245, 0.715);"></i>
+                                    </a>
+                                    <br>
+                                    <a href="https://x.com/KAMEHAMEHA_05" target="_blank" aria-label="X">
+                                        <i class="fab fa-x-twitter" style="font-size: 32px; padding-bottom: 10px; color: rgba(250, 245, 245, 0.715);"></i>
+                                    </a>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-2-b-y">
+                    <div class="bento-content-vibe">
+                        <div style="display: flex; gap: 40px; align-items: center;">
+                            <div class="fab-grid" style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-briefcase" style="font-size: 32px; margin-top: 70%; margin-left: 10%; color: rgba(250, 245, 245, 0.715);"></i>
+                            </div>
+                            <div style="display: flex; flex-direction: column;">
+                                <span style="font-family: 'Montserrat', sans-serif; font-size: 25px; font-weight: 800; color: rgb(252, 252, 253); margin-top: 4%;">
+                                    Student
+                                </span>
+                                
+                                <span style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800; color: rgb(252, 252, 253); margin-top: 4%;">
+                                    B.Tech CSE <br>VIT Chennai
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="bento-3">
+            <div class="bento-3-a">
+                <div class="bento-content">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 40px; font-weight: 800; color: rgb(252, 252, 253); text-shadow: 4px 4px 8px rgba(245, 106, 6, 0.57);">
+                        Wanna Know Me?
+                    </span>                        
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 500; color: rgb(252, 252, 253)"><p>Discover what I’m all about....</p></span>
+                    <br><br><br><br>
+                    <a class="bento-title-about" href="/about.html">About Me</a>
+                </div>
+            </div>
+            <div class="bento-3-b">
+                <div class="bento-content-skills">
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 800; color: rgb(252, 252, 253); text-shadow: 4px 4px 8px rgba(245, 106, 6, 0.57);">
+                        Fuel to my craft...
+                    </span>
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 500; color: rgb(252, 252, 253)"><p>A peek into my Tech Arsenal</p></span>                  
+                    <!-- <br><br><br> -->
+                    <a class="bento-title-about" href="/skills.html">Skills</a>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <br><br>
+    wasuup boii
+    </div>
+    <script>
+        // Particles script
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+    
+            // Set canvas to full window size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+    
+            const particles = [];
+            const particleCount = 100;
+    
+            // Set a constant speed for all particles
+            const speed = 1; // Adjust this value to control the speed
+    
+            class Particle {
+                constructor(x, y, size, direction) {
+                    this.x = Math.floor(x);
+                    this.y = Math.floor(y);
+                    this.size = size;
+    
+                    // Use the same speed but vary the direction
+                    this.speedX = Math.cos(direction) * speed*0.5;
+                    this.speedY = Math.sin(direction) * speed*0.5;
+                }
+    
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+    
+                    // Bounce at edges
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                }
+    
+                draw() {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.fillRect(Math.round(this.x), Math.round(this.y), this.size, this.size);
+                }
+            }
+    
+            // Create particles
+            function createParticles() {
+                for (let i = 0; i < particleCount; i++) {
+                    const x = Math.random() * canvas.width;
+                    const y = Math.random() * canvas.height;
+                    const size = Math.floor(Math.random() * 4) + 2;
+    
+                    // Random direction in radians (0 to 2π)
+                    const direction = Math.random() * Math.PI * 2;
+    
+                    particles.push(new Particle(x, y, size, direction));
+                }
+            }
+    
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+    
+                requestAnimationFrame(animate);
+            }
+    
+            // Handle window resizing
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+    
+            // Initialize
+            createParticles();
+            animate();
+        });
+    </script>
+</body>
 </html>

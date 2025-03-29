@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts for Montserrat -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="blogs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>hljs.highlightAll();</script>
+    <title>Ishaan Sawant</title>
+    <link rel="icon" href="/profile-img.png" type="image/x-icon">
+    
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <nav class="navbar">
+        <div class="social-links">
+            <a href="https://github.com/KAMEHAMEHA-05" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ishaan-sawant" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://discordapp.com/users/806511180226363394" target="_blank" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://x.com/KAMEHAMEHA_05" target="_blank" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="/">HOME</a>
+            <a href="/about.html">ABOUT</a>
+            <a href="/projects.html">PROJECTS</a>
+            <a href="/skills.html">SKILLS</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#more">MORE</a>
+        </div>
+    </nav>
+    <div id="content" class="loading">Loading markdown content...</div>
+
+    <script>
+        async function loadMarkdown() {
+            try {
+                const response = await fetch('README.md');  // Change this to your Markdown file
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to load markdown file: ${response.status}`);
+                }
+                
+                const text = await response.text();
+                
+                // Configure marked options for better rendering
+                marked.setOptions({
+                    breaks: true,
+                    gfm: true,
+                    headerIds: true,
+                    highlight: function(code, language) {
+                        if (language && hljs.getLanguage(language)) {
+                            return hljs.highlight(code, { language }).value;
+                        }
+                        return hljs.highlightAuto(code).value;
+                    }
+                });
+                
+                // Parse Markdown and render
+                document.getElementById('content').innerHTML = marked.parse(text);
+                document.getElementById('content').classList.remove('loading');
+                
+                // Apply syntax highlighting to code blocks
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
+            } catch (error) {
+                console.error('Error loading markdown:', error);
+                document.getElementById('content').innerHTML = `
+                    <div style="color: #d32f2f; padding: 20px; background: #ffebee; border-radius: 5px;">
+                        <h3>Error Loading Markdown</h3>
+                        <p>${error.message}</p>
+                        <p>Make sure the markdown file exists and the path is correct.</p>
+                    </div>
+                `;
+                document.getElementById('content').classList.remove('loading');
+            }
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('DOMContentLoaded', loadMarkdown);
+    </script>
+    <script>
+        // Particles script
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+    
+            // Set canvas to full window size
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+    
+            const particles = [];
+            const particleCount = 100;
+    
+            // Set a constant speed for all particles
+            const speed = 1; // Adjust this value to control the speed
+    
+            class Particle {
+                constructor(x, y, size, direction) {
+                    this.x = Math.floor(x);
+                    this.y = Math.floor(y);
+                    this.size = size;
+    
+                    // Use the same speed but vary the direction
+                    this.speedX = Math.cos(direction) * speed*0.5;
+                    this.speedY = Math.sin(direction) * speed*0.5;
+                }
+    
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+    
+                    // Bounce at edges
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                }
+    
+                draw() {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.fillRect(Math.round(this.x), Math.round(this.y), this.size, this.size);
+                }
+            }
+    
+            // Create particles
+            function createParticles() {
+                for (let i = 0; i < particleCount; i++) {
+                    const x = Math.random() * canvas.width;
+                    const y = Math.random() * canvas.height;
+                    const size = Math.floor(Math.random() * 4) + 2;
+    
+                    // Random direction in radians (0 to 2π)
+                    const direction = Math.random() * Math.PI * 2;
+    
+                    particles.push(new Particle(x, y, size, direction));
+                }
+            }
+    
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+    
+                requestAnimationFrame(animate);
+            }
+    
+            // Handle window resizing
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+    
+            // Initialize
+            createParticles();
+            animate();
+        });
+    </script>
+</body>
+</html>

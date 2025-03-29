@@ -110,6 +110,8 @@ body::before {
 .content-container {
     text-align: left;
     margin-bottom: 20px;
+    width: 100%;
+    height: 100vh;
     margin-top: 17%;
     position: relative;
     display: flex;           /* Added this */
