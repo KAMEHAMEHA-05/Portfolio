@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+
 body {
     margin-left: 5%;
     margin-right: 5%;
@@ -328,4 +331,123 @@ body::-webkit-scrollbar-thumb {
 .value {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
+}
+
+.contact {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0); /* Translucent effect */
+    
+    display: none;  /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above everything */
+}
+
+/* Make contact appear when targeted */
+#contact:target {
+    display: flex;
+
+}
+
+/* contact Content */
+.contact-content {
+    background: rgba(21, 21, 21, 0.667);
+    border: 2px solid rgba(240, 241, 241, 0.379);
+    box-shadow: 0px 8px 20px 5px rgba(8, 203, 242, 0.192);
+    color: rgba(255, 255, 255, 0.721);
+    transform: translate(95%, 60%);
+    backdrop-filter: blur(5px);
+    font-family: 'Montserrat', sans-serif;
+    width: 80vw;
+    height: 80vh;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+.contact-det{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    gap: 20px;
+}
+
+.creds{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+}
+
+.extras{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+}
+
+.submit{
+    width: 20%; 
+    height: 100%; 
+    border: 1px solid rgba(255, 255, 255, 0.596); 
+    display: flex; 
+    align-items: center; 
+    font-family: 'Montserrat', sans-serif; 
+    justify-content: center; 
+    font-size: 1.7rem; 
+    cursor: pointer;
+}
+
+.submit :hover{
+    background-color: teal;
+    color: black;
+}
+
+.contact_title {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    text-shadow: 4px 4px 8px rgba(6, 213, 245, 0.721);
+}
+
+.bac:hover {
+    background-color: rgba(255, 255, 255, 0.534) !important;
+    color: black !important;
+    font-size: 1.2rem !important;
+}
+
+.submit:hover {
+    background-color: rgba(255, 255, 255, 0.534) !important;
+    color: black !important;
+}
+
+.fab_c i:hover{
+    color:#e99a06ce !important;
+    transform: translate(0, -2px) !important;
+}
+
+.close_c i:hover {
+    transform: translate(0, -2px) !important;
+    color: rgba(8, 194, 194, 0.807) !important;
 }
